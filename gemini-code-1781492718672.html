@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcus Hua - Grade 10 Career Portfolio</title>
+    <style>
+        /* ==========================================
+           ASSIGNMENT COMPLIANCE DESIGN SYSTEM
+           ========================================== */
+        :root {
+            --primary-navy: #2c3e50;
+            --accent-teal: #1abc9c;
+            --bg-light: #fafafa;
+            --card-bg: #ffffff;
+            
+            /* Class Rubric Specification Variables */
+            --rubric-font: 'Arial', sans-serif;
+            --rubric-font-size: 12pt;
+            --rubric-line-spacing: 2.0; /* Mandated Double Line Spacing for Reflections */
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: var(--bg-light);
+        }
+
+        /* Fixed Assignment Navigation Bar */
+        nav {
+            background-color: var(--primary-navy);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95rem;
+        }
+        nav a:hover {
+            color: var(--accent-teal);
+        }
+
+        /* SECTION 1: MANDATED COMPLIANT TITLE PAGE */
+        .title-page-hero {
+            min-height: 95vh;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            box-sizing: border-box;
+            color: white;
+            text-align: center;
+        }
+        .title-page-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+        .title-page-hero h2 {
+            font-size: 1.8rem;
+            color: var(--accent-teal);
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+        .title-split {
+            display: flex;
+            max-width: 1050px;
+            width: 100%;
+            gap: 40px;
+            align-items: center;
+            justify-content: center;
+        }
+        .profile-text-box {
+            flex: 1.3;
+            background: rgba(255, 255, 255, 0.12);
+            padding: 35px;
+            border-radius: 12px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: left;
+        }
+        .profile-text-box h3 {
+            border-bottom: 2px solid var(--accent-teal);
+            padding-bottom: 8px;
+            margin-top: 0;
+        }
+        .meta-assignment-info {
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: #bdc3c7;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 15px;
+        }
+
+        /* CORE CONTENT WRAPPER */
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        section {
+            background: var(--card-bg);
+            padding: 45px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            scroll-margin-top: 80px;
+        }
+        section h2 {
+            color: var(--primary-navy);
+            border-bottom: 3px solid var(--accent-teal);
+            padding-bottom: 10px;
+            margin-top: 0;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            font-size: 1.3rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* SECTION 2: TABLE OF CONTENTS STYLING */
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .toc-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+        .toc-list a {
+            color: var(--primary-navy);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .toc-list a:hover {
+            color: var(--accent-teal);
+        }
+        .toc-dots {
+            flex-grow: 1;
+            border-bottom: 1px dotted #cbd5e1;
+            margin: 0 15px;
+            position: relative;
+            top: 5px;
+        }
+        .toc-page {
+            font-weight: bold;
+            color: #64748b;
+        }
+
+        /* SECTION 5: DOUBLE-SPACED 12PT ARIAL REFLECTION CARDS */
+        .rubric-reflection-container {
+            font-family: var(--rubric-font);
+            font-size: var(--rubric-font-size);
+            line-height: var(--rubric-line-spacing);
+            background-color: #f8fafc;
+            border-left: 5px solid var(--accent-teal);
+            padding: 30px;
+            border-radius: 4px;
+            margin-top: 20px;
+            color: #1e293b;
+        }
+        .reflection-meta-table {
+            line-height: 1.5;
+            margin-bottom: 20px;
+            background: rgba(26, 188, 156, 0.08);
+            padding: 15px;
+            border-radius: 4px;
+            font-size: 0.95rem;
+        }
+
+        /* Dynamic Artifact Scans Layout */
+        .evidence-uploader-wrapper {
+            width: 100%;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        /* Cover Letter Block Fix */
+        .letter-metadata {
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            color: #475569;
+            line-height: 1.5;
+        }
+
+        /* Interactive Upload Styling */
+        .resume-image-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .image-uploader-wrapper {
+            width: 100%;
+            max-width: 800px;
+            position: relative;
+            text-align: center;
+        }
+        .preview-img {
+            width: 100%;
+            max-width: 650px;
+            height: auto;
+            display: inline-block;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            border: 1px solid #e2e8f0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background-color: var(--primary-navy);
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .title-split { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="#title-page">Title Page</a></li>
+            <li><a href="#table-of-contents">TOC</a></li>
+            <li><a href="#cover-letter">Cover Letter</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#academic-section">Kumon Award</a></li>
+            <li><a href="#management-section">Black Belt Certification</a></li>
+            <li><a href="#teamwork-section">Performance Trophy</a></li>
+        </ul>
+    </nav>
+
+    <div id="wrapper">
+        
+        <div id="title-page" class="title-page-hero">
+            <h1>Marcus Hua</h1>
+            <h2>Career Portfolio</h2>
+            
+            <div class="title-split">
+                <div class="profile-text-box">
+                    <h3>Candidate Profile Summary</h3>
+                    <p>Motivated High School Sophomore building an educational and technical roadmap toward field operations in accounting, corporate fractional bookkeeping, and technical analysis.</p>
+                    <p>This comprehensive collection showcases applied employability framework standards, communication samples, and verified technical executions intended to showcase cross-functional business support readiness.</p>
+                    
+                    <div class="meta-assignment-info">
+                        <strong>Course:</strong> GLC2O - Career Studies<br>
+                        <strong>Instructor:</strong> Mr. Tsang<br>
+                        <strong>Submission Date:</strong> June 15, 2026 (Summative Assessment Copy)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            
+            <section id="table-of-contents">
+                <h2>Table of Contents</h2>
+                <ul class="toc-list">
+                    <li><a href="#title-page">Assignment Title Page</a><span class="toc-dots"></span><span class="toc-page">Sec. I</span></li>
+                    <li><a href="#cover-letter">Professional Cover Letter (TYM Consulting Application)</a><span class="toc-dots"></span><span class="toc-page">Sec. II</span></li>
+                    <li><a href="#resume">Verified Graphic Resume Image Asset</a><span class="toc-dots"></span><span class="toc-page">Sec. III</span></li>
+                    <li><a href="#academic-section">Portfolio Item: Kumon Mathematics Platinum Award (Rank 84/1737)</a><span class="toc-dots"></span><span class="toc-page">Sec. IV</span></li>
+                    <li><a href="#management-section">Portfolio Item: Official Kukkiwon 1st Poom Taekwondo Black Belt Promotion Certification</a><span class="toc-dots"></span><span class="toc-page">Sec. V</span></li>
+                    <li><a href="#teamwork-section">Portfolio Item: Royal Taekwondo Black Belt Grading Overall Performance Trophy</a><span class="toc-dots"></span><span class="toc-page">Sec. VI</span></li>
+                </ul>
+            </section>
+            
+            <section id="cover-letter">
+                <h2>Cover Letter</h2>
+                <div style="background: #fdfdfd; color: #333; border: 1px solid #e2e8f0; padding: 35px; border-radius: 8px;">
+                    <div class="letter-metadata">
+                        <strong>Marcus Hua</strong><br>
+                        2 Calderbridge Cres<br>
+                        Markham, Canada, L3R 9M8<br>
+                        <a href="mailto:marcushua2017@gmail.com">marcushua2017@gmail.com</a> | +1 (647) 625-9810
+                    </div>
+                    <div class="letter-metadata">
+                        <strong>Date:</strong> June 4, 2026
+                    </div>
+                    <div class="letter-metadata">
+                        <strong>To:</strong> [Insert Contact Name]<br>
+                        TYM Consulting<br>
+                        North York, ON M3J 2T4
+                    </div>
+                    
+                    <p>Dear [Insert Contact Name],</p>
+                    
+                    <p>I am writing to express my strong interest in the full time Bookkeeper / Accountant position at TYM Consulting. I learned about this exciting opportunity through my careers teacher, Mr. Tsang, who highly recommended your organization. I am incredibly eager to join your team because I have a passion for financial analysis, organization, and helping growing firms manage daily accounting operations to ensure accurate, audit ready books.</p>
+                    
+                    <p>As a student with a keen interest in mathematics and analytical problem solving, I have developed strong technical and communication skills that will allow me to thrive in this role. Through my school coursework and participation in group projects, I have learned how to manage complex datasets, solve problems critically, and maintain a high level of attention to detail, which are skills that directly align with handling general ledger entries, managing accounts payable and receivable, and performing precise bank reconciliations. Additionally, my experience in structured, fast paced environments, such as my training in Taekwondo, has taught me how to be disciplined, highly adaptable, and focused when managing tight timelines and multiple responsibilities simultaneously.</p>
+                    
+                    <p>I admire TYM Consulting’s commitment to providing high quality fractional CFO and accounting services. Your focus on helping a diverse portfolio of clients navigate their financial landscapes through robust internal controls and organized reporting aligns perfectly with my own dedication to precision. I am eager to bring my energetic work ethic and analytical mindset to your firm, and I am highly motivated to quickly master your QuickBooks Online workflows and support your monthly close procedures.</p>
+                    
+                    <p>I would welcome the opportunity for a personal interview to further discuss how my background and enthusiasm align with the needs of TYM Consulting. If you require any additional information, please feel free to contact me at the phone number or email address listed above. If I do not hear from you in two weeks, I will follow up to ensure my application was received. Thank you for your time and consideration, and I look forward to the possibility of meeting you soon.</p>
+                    
+                    <p>Sincerely,<br><br><strong>Marcus Hua</strong></p>
+                </div>
+            </section>
+
+            <section id="resume">
+                <h2>Resume</h2>
+                <div class="resume-image-container">
+                    <div class="image-uploader-wrapper">
+                        <img id="resumePreview" class="preview-img" src="Beige Bold Graphic Designer CV.jpg" alt="Marcus Hua Graphic Resume File">
+                    </div>
+                </div>
+            </section>
+
+            <section id="academic-section">
+                <h2>Portfolio Item: Kumon Mathematics Platinum Award (Rank 84/1737)</h2>
+                
+                <div class="evidence-uploader-wrapper">
+                    <img id="academicPreview" class="preview-img" src="img2.jpg" alt="Academic Artifact Scan Portfolio Asset">
+                </div>
+
+                <div class="rubric-reflection-container">
+                    <div class="reflection-meta-table">
+                        <strong>Portfolio Item:</strong> Kumon Mathematics Platinum Award (Rank 84/1737)<br>
+                        <strong>Resume Reference Target Area:</strong> Achievements / Education<br>
+                        <strong>Verified Evaluation Category:</strong> Academic Ability (Mathematical & Logical Reasoning)
+                    </div>
+                    
+                    <p>This item provides proof of my academic capabilities in advanced logical problem solving and processing data configurations. Earning my official Kumon Platinum Distinction ranking 84th out of 1,737 Canadian students by reaching the advanced M 200 metric documents my long-term technical fluency and mathematical competence under pressure.</p>
+                    
+                    <p>This artifact demonstrates my ability to process numerical datasets and identify patterns accurately. Managing complex math equations systematically directly mirrors the analytical skills required to process ledger balances and handle accounts receivable sheets correctly.</p>
+                    
+                    <p>These specific abilities can be seamlessly transferred to my future career goal of working as a professional corporate accountant at an advisory firm like TYM Consulting. Financial auditing requires intense focus and structural accuracy to make sure clients have audit-ready records. Furthermore, this analytical base can be applied to configuring modern workflows inside software applications like QuickBooks Online, showing that I can turn theoretical knowledge into clean, actionable business results.</p>
+                </div>
+            </section>
+
+            <section id="management-section">
+                <h2>Portfolio Item: Official Kukkiwon 1st Poom Taekwondo Black Belt Promotion Certification</h2>
+                
+                <div class="evidence-uploader-wrapper">
+                    <img id="personalPreview" class="preview-img" src="image1.jpg" alt="Personal Management Portfolio Asset">
+                </div>
+
+                <div class="rubric-reflection-container">
+                    <div class="reflection-meta-table">
+                        <strong>Portfolio Item:</strong> Official Kukkiwon 1st Poom Taekwondo Black Belt Promotion Certification<br>
+                        <strong>Resume Reference Target Area:</strong> Achievements / Extracurricular Activities<br>
+                        <strong>Verified Evaluation Category:</strong> Personal Management (Self-Discipline & Stress Mitigation)
+                    </div>
+                    
+                    <p>This performance award reflects the high degree of self-discipline, time management, and internal accountability that I bring to my commitments. Progressing all the way to an internationally accredited Kukkiwon Black Belt standard while simultaneously managing a rigorous academic schedule requires deep focus and careful planning.</p>
+                    
+                    <p>This milestone demonstrates my personal capacity to perform reliably under high-stress conditions. In martial arts training, consistency, stamina, and learning from failure are vital to success. I apply this exact same focus to my schoolwork, avoiding procrastination to ensure all my technical targets are met on time.</p>
+                    
+                    <p>This skill sets a solid foundation for managing tight commercial schedules, such as supporting close procedures during fiscal year-ends. The accountability developed through black-belt testing ensures that I can handle multiple client accounts systematically without losing accuracy. This personal reliability translates into strong internal controls and organized workflows, giving business stakeholders absolute confidence in my accounting and auditing support.</p>
+                </div>
+            </section>
+
+            <section id="teamwork-section">
+                <h2>Portfolio Item: Royal Taekwondo Black Belt Grading Overall Performance Trophy</h2>
+                
+                <div class="evidence-uploader-wrapper">
+                    <img id="teamworkPreview" class="preview-img" src="img1.jpg" alt="Teamwork Portfolio Asset">
+                </div>
+
+                <div class="rubric-reflection-container">
+                    <div class="reflection-meta-table">
+                        <strong>Portfolio Item:</strong> Royal Taekwondo Black Belt Grading Overall Performance Trophy<br>
+                        <strong>Resume Reference Target Area:</strong> Experience / Leadership / Volunteer Work<br>
+                        <strong>Verified Evaluation Category:</strong> Teamwork Skills (Peer Coaching, Group Coordination & Communication)
+                    </div>
+                    
+                    <p>This item represents my ability to work within collaborative, multi-tiered teams and lead others toward shared athletic and operational goals. Through coaching classes and participating in rigorous tournament training, I frequently collaborate with peers, head instructors, and younger students to execute precise drills and manage sparring lines.</p>
+                    
+                    <p>This experience showcases my overall teamwork skills, which were critical during the intensive group testing required to achieve my Black Belt. Earning a black belt is not a solo effort; it relies on group testing dynamics where candidates must sync their patterns, trust their partners during high-impact breaking drills, and display mutual accountability. Preparing for tournaments and black belt testing requires intense collective effort; teammates must act as reliable sparring partners, push each other's limits safely, and provide constructive, real-time feedback to correct form and technique. Additionally, stepping into an instructional role to coach classes has sharpened my ability to explain complex movements clearly, adapt my style to different learning speeds, and motivate individuals when energy runs low.</p>
+                    
+                    <p>In a professional corporate accounting environment, teamwork is essential to everyday success. Accountants do not work in a vacuum; they must collaborate with corporate staff, communicate technical data across various branches, and align with fractional CFOs during complex client audits. The leadership, adaptability, and clear verbal communication skills I have developed on the mats ensure that I can integrate smoothly into project teams, listen effectively to client concerns, and help coordinate complex financial operations smoothly and efficiently.</p>
+                </div>
+            </section>
+            
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Marcus Hua. GLC2O Career Studies Portfolio Project. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
